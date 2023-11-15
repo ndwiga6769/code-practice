@@ -1,3 +1,4 @@
+#!
 # There is a road consisting of N segments (numbered from 0 to N-1) described by an array R 
 # of integers. The K-th segment is described by an integer R[K]. If the segment is smooth 
 # (there is no pothole in it), then R[K] = 0; otherwise it contains a pothole of depth R[K].
@@ -24,20 +25,41 @@
 # solution 
 # initialize variable
 
-def solution(R):
-    max_indicator = 0
-    consecutive_potholes = 0
-    max_pothole_depth = 0
+# def solution(R):
+#     max_indicator = 0
+#     consecutive_potholes = 0
+#     max_pothole_depth = 0
 
-    for depth in R:
-        if depth > 0:
-            consecutive_potholes += 1
-            max_pothole_depth = max(max_pothole_depth, depth)
+#     for depth in R:
+#         if depth > 0:
+#             consecutive_potholes += 1
+#             max_pothole_depth = max(max_pothole_depth, depth)
+#         else:
+#             max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
+#             consecutive_potholes = 0
+#             max_pothole_depth = 0
+
+#         max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
+
+#     return max_indicator
+
+def smooth_path(input_list):
+    groups = []
+    current_group = []
+    for num in input_list:
+        if num == 0:
+            if current_group:
+                groups.append(current_group)
+                current_group = []
         else:
-            max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
-            consecutive_potholes = 0
-            max_pothole_depth = 0
+            current_group.append(num)
+    if current_group:
+        groups.append(current_group)
+    max_sum = 0
+    for group in groups:
+        group_sum = len(group) * max(group)
+        if group_sum > max_sum:
+            max_sum = group_sum
+    return max_sum
 
-        max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
-
-    return max_indicator
+print(smooth_path([0,2,1,1,0,4,1]))
