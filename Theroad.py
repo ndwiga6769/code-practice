@@ -63,3 +63,32 @@ def smooth_path(input_list):
     return max_sum
 
 print(smooth_path([0,2,1,1,0,4,1]))
+
+def solution(A):
+    from collections import Counter
+    counter = Counter(A)
+    freqs = sorted(list(counter.values()), reverse=True)
+    deletions = 0
+    seen = set()
+    for freq in freqs:
+        while freq in seen:
+            freq -= 1
+            deletions += 1
+        if freq > 0:
+            seen.add(freq)
+    return deletions
+
+def solution(S):
+    from collections import defaultdict
+    left_counter = defaultdict(int)
+    right_counter = defaultdict(int)
+    for c in S:
+        right_counter[c] += 1
+    splits = 0
+    for i in range(len(S) - 1):
+        c = S[i]
+        left_counter[c] += 1
+        right_counter[c] -= 1
+        if left_counter['x'] == left_counter['y'] or right_counter['x'] == right_counter['y']:
+            splits += 1
+    return splits
