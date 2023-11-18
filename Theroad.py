@@ -25,23 +25,23 @@
 # solution 
 # initialize variable
 
-# def solution(R):
-#     max_indicator = 0
-#     consecutive_potholes = 0
-#     max_pothole_depth = 0
+def solution(R):
+    max_indicator = 0
+    consecutive_potholes = 0
+    max_pothole_depth = 0
 
-#     for depth in R:
-#         if depth > 0:
-#             consecutive_potholes += 1
-#             max_pothole_depth = max(max_pothole_depth, depth)
-#         else:
-#             max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
-#             consecutive_potholes = 0
-#             max_pothole_depth = 0
+    for depth in R:
+        if depth > 0:
+            consecutive_potholes += 1
+            max_pothole_depth = max(max_pothole_depth, depth)
+        else:
+            max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
+            consecutive_potholes = 0
+            max_pothole_depth = 0
 
-#         max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
+        max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
 
-#     return max_indicator
+    return max_indicator
 
 def smooth_path(input_list):
     groups = []
