@@ -10,3 +10,4 @@ def triple_trouble(one, two, three):
     for i in range(len(one)):
         combined += one[i] + two[i] + three[i]
     return combined
+
