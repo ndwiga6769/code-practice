@@ -11,3 +11,6 @@ def validate_username(username):
     pattern = r'^[a-z0-9_]{4,16}$'
     return bool(re.match(pattern, username))
    
+def validate_username(username):
+    pattern = r'^[a-z0-9_]{4,16}$'
+    return bool(re.match(pattern, username))
