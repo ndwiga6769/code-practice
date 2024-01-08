@@ -29,4 +29,4 @@ def valid_braces(s):
         else:
             return False
 
-    return not stack
+    return not stack  
