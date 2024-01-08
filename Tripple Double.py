@@ -5,10 +5,10 @@
 
 # Note: You can expect all of the inputs to be the same length.
 
-def triple_trouble(one, two, three):
-    combined = ''
-    for i in range(len(one)):
-        combined += one[i] + two[i] + three[i]
+def triple_trouble(one, two, three): 
+    combined = ''  
+    for i in range(len(one)):  
+        combined += one[i] + two[i] + three[i]  
     return combined
-   
+     
  
