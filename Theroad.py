@@ -42,7 +42,7 @@ def solution(R):
         max_indicator = max(max_indicator, consecutive_potholes * max_pothole_depth)
 
     return max_indicator
-
+   
 def smooth_path(input_list):
     groups = []
     current_group = []
@@ -63,7 +63,7 @@ def smooth_path(input_list):
     return max_sum
 
 print(smooth_path([0,2,1,1,0,4,1]))
-
+  
 def solution(A):
     from collections import Counter
     counter = Counter(A)
