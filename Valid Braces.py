@@ -28,5 +28,5 @@ def valid_braces(s):
             stack.pop()
         else:
             return False
-
+  
     return not stack  
