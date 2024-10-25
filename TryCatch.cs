@@ -15,6 +15,10 @@ class Program
         	{
             Console.WriteLine(e.Message);
             }
+        finally
+            {
+            Console.WriteLine("The code has completed execution")    
+            }
         }
     }
 }
